@@ -1,5 +1,5 @@
 # RStudio-CleaningData
-Cleaning Data Using RStudio
+Cleaning Data Using **RStudio**
 
 ### Aim: to clean data in preparation for data visualisation
 
