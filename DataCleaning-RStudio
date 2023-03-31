@@ -1,41 +1,37 @@
-#Load data
+#Loaded data
 df<-read.csv("https://public.tableau.com/app/sample-data/HollywoodsMostProfitableStories.csv")
 
-#Now the data is loaded, lets take a look
+#Now that the data has been loaded, let's have a look and keep case sensitivity in mind.
 View(df)
 
-#remember case sensitivity
-View(df)
-
-#After executing this command, a new window has appeared with the dataset. Here we can see the column names and the rows containing data.
-#Now it is time to load up the library in order to sort and clean through the data, and perform analysis techniques.
+#A new window with dataset has emerged and the column names and data rows are displayed, it's time to open the library and begin sorting and cleaning through the data, as well as performing analytic procedures.
 install.packages("tidyverse")
 
-#Now that the package has been installed, we can go ahead and import the libary.
+#We may import the library now that the package has been installed.
 library(tidyverse)
 
-#Once the library has been imported, we can go ahead and start looking through the dataset. I will start off by checking data types,followed by some data cleaning techniques.
+#We can now begin browsing the dataset after the library has been imported.
 str(df)
+
+#The following command examines the df for missing values.
 colSums(is.na(df))
 
-#The command above searches for missing values in the df. The following command will drop the missing values.
+#The missing values will be removed with the following command.
 df<-na.omit(df)
 
-#To check whether the values have been dropped or not, we can execute the following command
+#We may use the following command to see if the values have been dropped or not.
 colSums(is.na(df))
 
-#All missing values haven now been dropped from the df.
-#Another step in the data cleaning process is to check for duplicates
+#Keep an eye out for errors in the command, such as incorrect signals or misspellings.
+dim(df[duplicated(df£Film),])[1]
+
+#Duplicates checked (with the right code)
 dim(df[duplicated(df$Film),])[1]
 
-#######################To make the df easier to read, we will round off values to 2 decimal places
-df$Profitability<-round(df$Profitability.digit=2)
-
-#Watch out for mistakes in the command, like spelling, using wrong signs etc. I will re-write the command now
+#Rounded the numbers to two decimal places to make the df easier to read.
 df$Profitability<-round(df$Profitability, digit=2)
 
-#Now let's see the df
-dim(df)
-
-#Checking for outliers is an important step of the data cleaning process. Outliers can be an indicator of bad data
+#Checking for outliers which is a key stage in the data cleansing process.
 library(ggplot2)
+
+...
